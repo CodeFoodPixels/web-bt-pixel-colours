@@ -1,0 +1,24 @@
+{
+  "name": "web-bt-pixel-colours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukeb-uk/web-bt-pixel-colours.git"
+  },
+  "author": "Luke Bonaccorsi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukeb-uk/web-bt-pixel-colours/issues"
+  },
+  "homepage": "https://github.com/lukeb-uk/web-bt-pixel-colours#readme",
+  "dependencies": {
+    "bleno": "^0.5.0",
+    "rpi-ws281x-native": "^0.8.2"
+  }
+}
