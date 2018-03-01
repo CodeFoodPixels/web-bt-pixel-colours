@@ -4,16 +4,21 @@ const bleno = require(`bleno`);
 const LED = require(`rpi-ws281x-native`);
 
 class colourCharacteristic extends bleno.Characteristic {
-    constructor() {
+    constructor(pixels) {
         super({
             uuid: 'a2a88bd0-1cc5-11e8-8202-71882458c124',
             properties: ['write'],
-            value: null
+            descriptors: [
+                new bleno.Descriptor({
+                    uuid: '2901',
+                    value: 'Sets the colour of a pixel'
+                })
+            ],
         });
 
         this.pixelData = new Uint32Array(3);
 
-        LED.init(3);
+        LED.init(pixels);
 
         this.pixelData[0] = 0;
         this.pixelData[1] = 0;

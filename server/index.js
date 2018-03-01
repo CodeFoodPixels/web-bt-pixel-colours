@@ -2,6 +2,9 @@
 
 const bleno = require(`bleno`);
 const colourCharacteristic = require(`./colourCharacteristic.js`)
+const pixelsCharacteristic = require(`./pixelsCharacteristic.js`)
+
+const NUM_PIXELS = 3;
 
 bleno.on(`stateChange`, (state) => {
     if (state === `poweredOn`) {
@@ -19,7 +22,8 @@ bleno.on(`advertisingStart`, (error) => {
             new bleno.PrimaryService({
                 uuid: '8b68df30-1cbe-11e8-b151-297a54730e1c',
                 characteristics: [
-                    new colourCharacteristic()
+                    new colourCharacteristic(NUM_PIXELS),
+                    new pixelsCharacteristic(NUM_PIXELS)
                 ]
             })
         ]);
