@@ -16,13 +16,10 @@ class colourCharacteristic extends bleno.Characteristic {
             ],
         });
 
-        this.pixelData = new Uint32Array(3);
+        this.pixelData = new Uint32Array(pixels);
 
         LED.init(pixels);
 
-        this.pixelData[0] = 0;
-        this.pixelData[1] = 0;
-        this.pixelData[2] = 0;
         LED.render(this.pixelData);
 
         process.on('SIGINT', function () {
